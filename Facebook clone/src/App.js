@@ -1,0 +1,41 @@
+import React from 'react'
+import Header from './Header'
+import Sidebar from "./Sidebar"
+import Feed from "./Feed"
+import Login from "./Login"
+import { useStateValue } from './StateProvider'
+// import Widgets from './Widgets'
+
+
+const App = () => {
+  const [{user} , dispatch] = useStateValue()
+  // const user = null
+  
+     if(!user)
+     {
+     return  <Login /> 
+    }
+      
+    
+    
+    return (
+      <div className="app">
+  
+
+
+      <Header />
+
+      <div className="app_body">
+         <Sidebar />
+         <Feed />
+         {/* <Widgets /> */}
+         
+      </div>
+        {/* <h1>Facebook clone</h1> */}
+    </div>
+    )
+
+  
+}
+
+export default App
